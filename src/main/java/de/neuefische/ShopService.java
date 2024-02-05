@@ -1,10 +1,13 @@
 package de.neuefische;
 
-import java.util.List;
-
 public class ShopService {
     ProductRepo productRepo = new ProductRepo();
-    OrderRepo orderRepo = new OrderRepo();
+    OrderMapRepo orderMapRepo = new OrderMapRepo();
+
+    public ShopService(ProductRepo productRepo, OrderMapRepo orderMapRepo) {
+        this.productRepo = productRepo;
+        this.orderMapRepo = orderMapRepo;
+    }
 
     public void placeOrder(Order order){
         for(Product p : order.productListAsMap().values()){
@@ -12,6 +15,6 @@ public class ShopService {
                 System.out.println(p + " wurde nicht gefunden");
             }
         }
-        orderRepo.addOrder(order);
+        orderMapRepo.addOrder(order);
     }
 }
