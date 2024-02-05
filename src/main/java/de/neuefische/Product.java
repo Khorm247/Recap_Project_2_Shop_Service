@@ -8,4 +8,12 @@ public record Product(
         BigDecimal productPrice,
         int unitsPerPackage
 ) {
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", unitsPerPackage=" + unitsPerPackage +
+                '}';
+    }
 }

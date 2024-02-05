@@ -4,9 +4,8 @@ public class ShopService {
     ProductRepo productRepo = new ProductRepo();
     OrderMapRepo orderMapRepo = new OrderMapRepo();
 
-    public ShopService(ProductRepo productRepo, OrderMapRepo orderMapRepo) {
-        this.productRepo = productRepo;
-        this.orderMapRepo = orderMapRepo;
+    public ShopService() {
+        System.out.println("Shop created");
     }
 
     public void placeOrder(Order order){
