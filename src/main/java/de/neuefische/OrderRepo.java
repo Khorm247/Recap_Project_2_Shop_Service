@@ -1,12 +1,10 @@
 package de.neuefische;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class OrderListRepo {
+public class OrderRepo {
     private Map<Integer, Order> listOfOrdersMap = new HashMap<>();
 
     public Order getOrderByID(int orderID){
@@ -15,6 +13,14 @@ public class OrderListRepo {
 
     public void addOrder(Order order){
         listOfOrdersMap.put(order.orderID(), order);
+    }
+
+    public void deleteOrder(Order order){
+        listOfOrdersMap.remove(order.orderID());
+    }
+
+    public void clearOrderList(){
+        listOfOrdersMap.clear();
     }
 
     public void printOrderList(){
@@ -33,7 +39,7 @@ public class OrderListRepo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrderListRepo that = (OrderListRepo) o;
+        OrderRepo that = (OrderRepo) o;
         return Objects.equals(listOfOrdersMap, that.listOfOrdersMap);
     }
 

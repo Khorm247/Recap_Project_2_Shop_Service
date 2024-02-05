@@ -4,6 +4,6 @@ import java.util.Map;
 
 public record Order(
         int orderID,
-        Map<Integer, Product> productListAsMap
+        Map<Integer, Product> productListAsMap      // gespeichert als Bestellposition + Produkt
 ) {
 }
