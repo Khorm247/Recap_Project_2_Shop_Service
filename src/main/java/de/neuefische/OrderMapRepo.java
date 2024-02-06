@@ -7,18 +7,18 @@ import java.util.Objects;
 public class OrderMapRepo implements OrderRepo {
     private Map<Integer, Order> listOfOrdersMap = new HashMap<>();
 
+    // CONSTRUCTOR
     public OrderMapRepo(){
         System.out.println("empty OrderMapRepo was initialized");
     }
 
-    public Order getOrderByID(int orderID){
-        return listOfOrdersMap.get(orderID);
-    }
+    // METHODS
     @Override
     public void addOrder(Order order){
         listOfOrdersMap.put(order.orderID(), order);
+        System.out.printf("OrderNo %d received!", order.orderID());
+        System.out.printf("Order includes a total of %d Products\n", order.productList().size());
     }
-
     @Override
     public void deleteOrder(Order order) {
         listOfOrdersMap.remove(order.orderID());
@@ -38,12 +38,7 @@ public class OrderMapRepo implements OrderRepo {
         listOfOrdersMap.clear();
     }
 
-    public Map<Integer, Order> getListOfOrdersMap() {
-        return listOfOrdersMap;
-    }
-    public void setListOfOrdersMap(Map<Integer, Order> listOfOrdersMap) {
-        this.listOfOrdersMap = listOfOrdersMap;
-    }
+
 
 
     @Override

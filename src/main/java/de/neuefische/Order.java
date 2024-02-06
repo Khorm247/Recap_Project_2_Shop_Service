@@ -1,9 +1,9 @@
 package de.neuefische;
 
-import java.util.Map;
+import java.util.List;
 
 public record Order(
         int orderID,
-        Map<Integer, Product> productListAsMap      // gespeichert als Bestellposition + Produkt
+        List<Product> productList
 ) {
 }
