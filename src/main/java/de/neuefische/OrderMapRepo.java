@@ -7,6 +7,10 @@ import java.util.Objects;
 public class OrderMapRepo implements OrderRepo {
     private Map<Integer, Order> listOfOrdersMap = new HashMap<>();
 
+    public OrderMapRepo(){
+        System.out.println("empty OrderMapRepo was initialized");
+    }
+
     public Order getOrderByID(int orderID){
         return listOfOrdersMap.get(orderID);
     }

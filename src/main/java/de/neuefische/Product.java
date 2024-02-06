@@ -3,7 +3,7 @@ package de.neuefische;
 import java.math.BigDecimal;
 
 public record Product(
-        int productID,
+        int productIDfromProducer,
         String productName,
         BigDecimal productPrice,
         int unitsPerPackage
@@ -11,9 +11,10 @@ public record Product(
     @Override
     public String toString() {
         return "Product{" +
-                "productName='" + productName + '\'' +
-                ", productPrice=" + productPrice +
-                ", unitsPerPackage=" + unitsPerPackage +
-                '}';
+                "productName= '" + productName + '\'' +
+                ", productPrice= " + productPrice +
+                ", unitsPerPackage= " + unitsPerPackage +
+                ", productIdFromProducer= " + productIDfromProducer +
+                " }";
     }
 }
